@@ -1,0 +1,66 @@
+aid: cloudevents
+name: CloudEvents
+description: >-
+  CloudEvents is a CNCF graduated specification for describing event data in
+  a common way. It provides a consistent format for event metadata across
+  services, platforms, and systems, enabling interoperability between event
+  producers and consumers. The specification includes protocol bindings for
+  HTTP, AMQP, Kafka, MQTT, and NATS, along with SDKs in multiple languages.
+url: https://cloudevents.io
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Events
+- Specification
+- Messaging
+- Interoperability
+- Cloud Native
+- Graduated
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
+apis:
+- aid: cloudevents:cloudevents-spec
+  name: CloudEvents Specification
+  description: >-
+    The CloudEvents specification defines a set of metadata attributes that
+    must be present in every event, including source, type, id, and
+    specversion. It provides a vendor-neutral way to describe events that
+    enables consistent routing, filtering, and processing across different
+    systems and cloud providers.
+  humanURL: https://cloudevents.io/
+  properties:
+  - type: Documentation
+    url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md
+  tags:
+  - Events
+  - Specification
+  - Standards
+- aid: cloudevents:cloudevents-http-binding
+  name: CloudEvents HTTP Protocol Binding
+  description: >-
+    The HTTP protocol binding defines how CloudEvents are transported using
+    HTTP, including structured content mode where the entire event is in the
+    HTTP body, and binary content mode where event attributes are mapped to
+    HTTP headers. This enables REST APIs to produce and consume standardized
+    events.
+  humanURL: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md
+  properties:
+  - type: Documentation
+    url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md
+  tags:
+  - HTTP
+  - Protocol Binding
+  - REST
+common:
+- type: Documentation
+  name: CloudEvents Specification
+  description: The core CloudEvents specification and protocol bindings.
+  url: https://github.com/cloudevents/spec
+- type: GitHubOrg
+  name: CloudEvents GitHub
+  description: Source code for specifications and SDKs.
+  url: https://github.com/cloudevents
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
