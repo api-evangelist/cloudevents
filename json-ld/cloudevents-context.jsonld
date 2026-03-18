@@ -1,0 +1,126 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ce": "https://cloudevents.io/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "sec": "https://w3id.org/security#",
+
+    "CloudEvent": "ce:CloudEvent",
+    "Subscription": "ce:Subscription",
+    "Filter": "ce:Filter",
+    "ProtocolSettings": "ce:ProtocolSettings",
+
+    "specversion": {
+      "@id": "ce:specversion",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "type": {
+      "@id": "ce:eventType",
+      "@type": "xsd:string"
+    },
+    "datacontenttype": {
+      "@id": "ce:dataContentType",
+      "@type": "xsd:string"
+    },
+    "dataschema": {
+      "@id": "ce:dataSchema",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "dcterms:subject",
+      "@type": "xsd:string"
+    },
+    "time": {
+      "@id": "dcterms:created",
+      "@type": "xsd:dateTime"
+    },
+    "data": {
+      "@id": "ce:data"
+    },
+    "data_base64": {
+      "@id": "ce:dataBinary",
+      "@type": "xsd:base64Binary"
+    },
+
+    "sink": {
+      "@id": "ce:sink",
+      "@type": "@id"
+    },
+    "protocol": {
+      "@id": "ce:protocol",
+      "@type": "xsd:string"
+    },
+    "protocolSettings": {
+      "@id": "ce:protocolSettings"
+    },
+    "filters": {
+      "@id": "ce:filters",
+      "@container": "@set"
+    },
+    "types": {
+      "@id": "ce:eventTypes",
+      "@container": "@set"
+    },
+    "config": {
+      "@id": "ce:config"
+    },
+
+    "dialect": {
+      "@id": "ce:filterDialect",
+      "@type": "xsd:string"
+    },
+    "expression": {
+      "@id": "ce:filterExpression",
+      "@type": "xsd:string"
+    },
+
+    "contentMode": {
+      "@id": "ce:contentMode",
+      "@type": "xsd:string"
+    },
+
+    "traceparent": {
+      "@id": "ce:traceparent",
+      "@type": "xsd:string"
+    },
+    "tracestate": {
+      "@id": "ce:tracestate",
+      "@type": "xsd:string"
+    },
+    "partitionkey": {
+      "@id": "ce:partitionKey",
+      "@type": "xsd:string"
+    },
+    "sampledrate": {
+      "@id": "ce:sampledRate",
+      "@type": "xsd:integer"
+    },
+
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "version": {
+      "@id": "schema:softwareVersion",
+      "@type": "xsd:string"
+    }
+  }
+}

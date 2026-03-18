@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cloudevents.io/schemas/v1/cloudevent.json",
+  "title": "CloudEvent",
+  "description": "Schema for a CloudEvents v1.0 event envelope. A CloudEvent is a standardized description of an event produced by a software system. It consists of required context attributes (specversion, id, source, type) and optional context attributes (datacontenttype, dataschema, subject, time), along with an optional data payload. This schema enables consistent event interchange across services, platforms, and cloud providers.",
+  "type": "object",
+  "required": ["specversion", "id", "source", "type"],
+  "properties": {
+    "specversion": {
+      "type": "string",
+      "const": "1.0",
+      "description": "The version of the CloudEvents specification which the event uses. Currently the only supported value is '1.0'."
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifies the event. Producers must ensure that source and id together are unique for each distinct event. Consumers may assume that events with identical source and id are duplicates."
+    },
+    "source": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "Identifies the context in which an event happened. Often includes information such as the type of the event source, the organization publishing the event, or the process that produced the event. Must be a non-empty URI-reference."
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "This attribute contains a value describing the type of event related to the originating occurrence. Should be prefixed with a reverse-DNS name. The prefixed domain dictates the organization which defines the semantics of this event type."
+    },
+    "datacontenttype": {
+      "type": "string",
+      "description": "Content type of data value. Must adhere to the format specified in RFC 2046. Enables the data attribute to carry any type of content without being limited to JSON."
+    },
+    "dataschema": {
+      "type": "string",
+      "format": "uri",
+      "description": "Identifies the schema that data adheres to. Incompatible changes to the schema should be reflected by a different URI."
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1,
+      "description": "This describes the subject of the event in the context of the event producer. In publish-subscribe scenarios, a subscriber will typically subscribe to events emitted by a source, but the source identifier alone might not be sufficient as a qualifier for any specific event if the source context has internal sub-structure."
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of when the occurrence happened. If the time of the occurrence cannot be determined, then this attribute may be set to some other time (such as the current time) by the CloudEvents producer."
+    },
+    "data": {
+      "description": "The event payload. This specification does not place any restriction on the type of this information. It is encoded into a media format which is specified by the datacontenttype attribute."
+    },
+    "data_base64": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Base64-encoded event payload. This should be used when the data attribute contains binary content that cannot be represented as a UTF-8 string."
+    }
+  },
+  "additionalProperties": {
+    "description": "CloudEvents extension attributes. Extension attributes are additional metadata beyond the base specification and must use only lowercase letters a-z and digits 0-9 in their names."
+  },
+  "$defs": {
+    "CloudEventBatch": {
+      "type": "array",
+      "description": "A batch of CloudEvents serialized as a JSON array. Each element must be a valid CloudEvent. Used in the HTTP structured content mode with application/cloudevents-batch+json media type.",
+      "items": {
+        "$ref": "#"
+      },
+      "minItems": 1
+    },
+    "DistributedTracingExtension": {
+      "type": "object",
+      "description": "CloudEvents Distributed Tracing extension attributes for propagating trace context across event-driven systems. Based on the W3C Trace Context specification.",
+      "properties": {
+        "traceparent": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{2}-[0-9a-f]{32}-[0-9a-f]{16}-[0-9a-f]{2}$",
+          "description": "W3C Trace Context traceparent header value, encoding version, trace-id, parent-id, and trace-flags."
+        },
+        "tracestate": {
+          "type": "string",
+          "description": "W3C Trace Context tracestate header value, providing vendor-specific trace information as a comma-separated list of key=value pairs."
+        }
+      }
+    },
+    "PartitioningExtension": {
+      "type": "object",
+      "description": "CloudEvents Partitioning extension for directing related events to the same partition in Kafka or similar ordered messaging systems.",
+      "properties": {
+        "partitionkey": {
+          "type": "string",
+          "description": "A partition key that can be used to route events to the same partition in Kafka topics or similar systems, ensuring ordering for related events."
+        }
+      }
+    },
+    "SamplingExtension": {
+      "type": "object",
+      "description": "CloudEvents Sampling extension attribute for probabilistic event sampling.",
+      "properties": {
+        "sampledrate": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Sampled rate as a percentage (0-100) indicating what fraction of events from this source are being sent. A value of 100 means all events are sent; 0 means no events are sent."
+        }
+      }
+    }
+  }
+}

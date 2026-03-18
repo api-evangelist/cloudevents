@@ -1,0 +1,227 @@
+asyncapi: 2.6.0
+info:
+  title: CloudEvents HTTP Delivery
+  description: >-
+    AsyncAPI definition for CloudEvents delivery over HTTP. This document
+    describes the event-driven interface by which a CloudEvents-compatible
+    broker pushes events to a subscriber's HTTP sink endpoint. Events are
+    formatted as CloudEvents v1.0 and delivered in either structured content
+    mode (application/cloudevents+json) or binary content mode (with
+    CloudEvents attributes in HTTP headers). The subscriber's endpoint acts
+    as an HTTP webhook that receives POST requests from the event broker.
+  version: '1.0'
+  contact:
+    name: CloudEvents Community
+    url: https://cloudevents.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+externalDocs:
+  description: CloudEvents HTTP Protocol Binding Specification
+  url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md
+servers:
+  subscriberSink:
+    url: '{sinkUrl}'
+    protocol: https
+    description: >-
+      The subscriber's HTTP sink endpoint where the event broker delivers
+      CloudEvents. Provided by the subscriber when creating a subscription.
+    variables:
+      sinkUrl:
+        description: >-
+          Fully qualified HTTPS URL of the subscriber's event receiver endpoint,
+          as registered in the CloudEvents Subscriptions API.
+    security:
+      - bearerAuth: []
+channels:
+  /:
+    description: >-
+      The subscriber's sink endpoint receives HTTP POST requests from the
+      CloudEvents broker. Each request carries one CloudEvent (single delivery
+      mode) or a batch of CloudEvents (batch delivery mode). The subscriber
+      acknowledges receipt with a 2xx HTTP response.
+    publish:
+      operationId: receiveCloudEvent
+      summary: Receive a CloudEvent from the broker
+      description: >-
+        The event broker delivers a CloudEvent to this endpoint via HTTP POST.
+        In structured content mode the Content-Type is application/cloudevents+json
+        and the full event including context attributes is in the request body.
+        In binary content mode event context attributes are mapped to HTTP headers
+        prefixed with 'ce-' and the data payload is the raw request body with
+        the event's datacontenttype as Content-Type.
+      message:
+        oneOf:
+          - $ref: '#/components/messages/StructuredCloudEvent'
+          - $ref: '#/components/messages/BinaryCloudEvent'
+          - $ref: '#/components/messages/BatchedCloudEvents'
+  /batch:
+    description: >-
+      Batch delivery endpoint where the broker delivers multiple CloudEvents
+      in a single HTTP POST request using the application/cloudevents-batch+json
+      content type. Reduces per-event HTTP overhead for high-throughput scenarios.
+    publish:
+      operationId: receiveCloudEventBatch
+      summary: Receive a batch of CloudEvents from the broker
+      description: >-
+        The event broker delivers multiple CloudEvents in a single HTTP POST
+        request using the application/cloudevents-batch+json media type. The
+        body is a JSON array where each element is a complete CloudEvent in
+        structured format. The subscriber should return 200 to acknowledge
+        successful receipt of the entire batch.
+      message:
+        $ref: '#/components/messages/BatchedCloudEvents'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Bearer token authentication for the subscriber sink endpoint. The
+        event broker includes this token in the Authorization header when
+        delivering events. Configure via protocolSettings in the subscription.
+  messages:
+    StructuredCloudEvent:
+      name: StructuredCloudEvent
+      title: CloudEvent (Structured Content Mode)
+      summary: >-
+        A single CloudEvent delivered in structured content mode where all
+        event data including context attributes is encoded as a JSON object
+        in the HTTP request body.
+      contentType: application/cloudevents+json
+      headers:
+        type: object
+        properties:
+          Content-Type:
+            type: string
+            const: application/cloudevents+json
+            description: >-
+              Indicates structured CloudEvents content mode. The full CloudEvent
+              is in the HTTP body as a JSON object.
+      payload:
+        $ref: '#/components/schemas/CloudEvent'
+    BinaryCloudEvent:
+      name: BinaryCloudEvent
+      title: CloudEvent (Binary Content Mode)
+      summary: >-
+        A single CloudEvent delivered in binary content mode where CloudEvents
+        context attributes are HTTP headers prefixed with 'ce-' and the event
+        data is the raw HTTP body.
+      headers:
+        type: object
+        required:
+          - ce-specversion
+          - ce-id
+          - ce-source
+          - ce-type
+        properties:
+          ce-specversion:
+            type: string
+            const: '1.0'
+            description: CloudEvents spec version header. Always '1.0'.
+          ce-id:
+            type: string
+            description: Unique identifier for the event. Corresponds to the 'id' attribute.
+          ce-source:
+            type: string
+            description: URI-reference identifying the event origin. Corresponds to 'source'.
+          ce-type:
+            type: string
+            description: Type of the event. Corresponds to the 'type' attribute.
+          ce-subject:
+            type: string
+            description: Subject of the event in the producer context. Corresponds to 'subject'.
+          ce-time:
+            type: string
+            format: date-time
+            description: RFC 3339 timestamp of when the event occurred. Corresponds to 'time'.
+          ce-dataschema:
+            type: string
+            format: uri
+            description: URI of the schema the data adheres to. Corresponds to 'dataschema'.
+          ce-traceparent:
+            type: string
+            description: W3C Trace Context traceparent for distributed tracing extension.
+          ce-tracestate:
+            type: string
+            description: W3C Trace Context tracestate for distributed tracing extension.
+          Content-Type:
+            type: string
+            description: >-
+              MIME type of the event data payload. Corresponds to the 'datacontenttype'
+              CloudEvents attribute.
+      payload:
+        description: >-
+          The raw event data payload. Its structure is defined by the event
+          type and the schema identified by the ce-dataschema header.
+    BatchedCloudEvents:
+      name: BatchedCloudEvents
+      title: CloudEvents Batch
+      summary: >-
+        A batch of CloudEvents delivered in a single HTTP POST using the
+        application/cloudevents-batch+json media type. Improves throughput
+        by reducing per-event HTTP overhead.
+      contentType: application/cloudevents-batch+json
+      headers:
+        type: object
+        properties:
+          Content-Type:
+            type: string
+            const: application/cloudevents-batch+json
+            description: >-
+              Indicates batch CloudEvents content mode. The body is a JSON array
+              of CloudEvent objects.
+      payload:
+        type: array
+        description: JSON array of CloudEvent objects in structured format.
+        items:
+          $ref: '#/components/schemas/CloudEvent'
+        minItems: 0
+  schemas:
+    CloudEvent:
+      type: object
+      description: >-
+        A CloudEvents v1.0 event envelope with required context attributes
+        and optional data payload.
+      required:
+        - specversion
+        - id
+        - source
+        - type
+      properties:
+        specversion:
+          type: string
+          const: '1.0'
+          description: CloudEvents specification version.
+        id:
+          type: string
+          description: >-
+            Unique identifier for this event, unique within the scope of the producer.
+        source:
+          type: string
+          description: URI-reference identifying the context in which the event occurred.
+        type:
+          type: string
+          description: >-
+            Reverse-DNS-prefixed string identifying the event type, e.g.
+            com.example.object.created.
+        datacontenttype:
+          type: string
+          description: RFC 2046 media type of the event data.
+        dataschema:
+          type: string
+          format: uri
+          description: URI of a schema the data attribute adheres to.
+        subject:
+          type: string
+          description: Subject of the event within the producer context.
+        time:
+          type: string
+          format: date-time
+          description: Timestamp of when the event occurrence happened.
+        data:
+          description: Event-specific payload data. Structure defined by the event type.
+        data_base64:
+          type: string
+          contentEncoding: base64
+          description: Base64-encoded binary event data, mutually exclusive with 'data'.
