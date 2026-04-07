@@ -35,7 +35,7 @@ paths:
   /subscriptions:
     get:
       operationId: listSubscriptions
-      summary: List subscriptions
+      summary: CloudEvents List subscriptions
       description: >-
         Returns a list of all subscriptions currently managed by this endpoint.
         Each subscription entry includes its identifier, sink, source, and
@@ -58,7 +58,7 @@ paths:
           $ref: '#/components/responses/Forbidden'
     post:
       operationId: createSubscription
-      summary: Create a subscription
+      summary: CloudEvents Create a subscription
       description: >-
         Creates a new subscription to an event stream. The request body specifies
         the sink (delivery endpoint), the source of events, optional event type
@@ -98,7 +98,7 @@ paths:
       - $ref: '#/components/parameters/SubscriptionId'
     get:
       operationId: getSubscription
-      summary: Get a subscription
+      summary: CloudEvents Get a subscription
       description: >-
         Returns the details of a specific subscription identified by its unique
         identifier. The response includes the current configuration including
@@ -121,7 +121,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     put:
       operationId: updateSubscription
-      summary: Update a subscription
+      summary: CloudEvents Update a subscription
       description: >-
         Replaces the configuration of an existing subscription. The entire
         subscription object must be provided; partial updates are not supported
@@ -152,7 +152,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteSubscription
-      summary: Delete a subscription
+      summary: CloudEvents Delete a subscription
       description: >-
         Deletes an existing subscription. Once deleted, the broker stops
         delivering events to the subscription's sink. In-flight events at the
