@@ -1,0 +1,50 @@
+# Naftiko capabilities profile for the CloudEvents Subscriptions API.
+# Capabilities are derived from the CloudEvents Subscriptions API
+# specification at https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md
+provider: cloudevents
+name: CloudEvents Subscriptions API
+description: >-
+  Vendor-neutral REST interface for managing subscriptions to CloudEvents
+  streams. Clients can create, list, retrieve, update, and delete
+  subscriptions with filter criteria that select which events to deliver
+  and where to deliver them.
+capabilities:
+  - id: cloudevents.subscriptions.list
+    name: List subscriptions
+    description: Return all event-delivery subscriptions managed by a CloudEvents-compliant broker.
+    inputs: []
+    outputs:
+      - subscriptions
+  - id: cloudevents.subscriptions.create
+    name: Create subscription
+    description: Register a new subscription to deliver matching CloudEvents to a sink.
+    inputs:
+      - source
+      - types
+      - filters
+      - sink
+      - protocol
+    outputs:
+      - subscription
+  - id: cloudevents.subscriptions.get
+    name: Retrieve subscription
+    description: Get the configuration of a single subscription by id.
+    inputs:
+      - subscription-id
+    outputs:
+      - subscription
+  - id: cloudevents.subscriptions.update
+    name: Update subscription
+    description: Modify the filter, sink, or protocol settings of an existing subscription.
+    inputs:
+      - subscription-id
+      - subscription
+    outputs:
+      - subscription
+  - id: cloudevents.subscriptions.delete
+    name: Delete subscription
+    description: Remove an existing event-delivery subscription.
+    inputs:
+      - subscription-id
+    outputs:
+      - status

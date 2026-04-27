@@ -1,0 +1,93 @@
+extends:
+  - spectral:oas
+
+# Spectral linting rules for the CloudEvents Subscriptions API and any
+# OpenAPI describing CloudEvents-compliant endpoints.
+rules:
+  cloudevents-info-contact:
+    description: API contact information must be present.
+    severity: error
+    given: "$.info"
+    then:
+      field: contact
+      function: truthy
+
+  cloudevents-info-license:
+    description: API license must be declared (CloudEvents publishes under Apache-2.0).
+    severity: warn
+    given: "$.info"
+    then:
+      field: license
+      function: truthy
+
+  cloudevents-info-license-apache:
+    description: CloudEvents-aligned APIs should declare an Apache-2.0 license.
+    severity: warn
+    given: "$.info.license.name"
+    then:
+      function: pattern
+      functionOptions:
+        match: "(?i)apache"
+
+  cloudevents-server-https:
+    description: All server URLs must use HTTPS.
+    severity: error
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  cloudevents-operation-id:
+    description: Every operation must declare a unique operationId.
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: operationId
+      function: truthy
+
+  cloudevents-operation-tags:
+    description: Every operation must declare at least one tag.
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          minItems: 1
+
+  cloudevents-operation-summary:
+    description: Every operation must include a short summary.
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: summary
+      function: truthy
+
+  cloudevents-error-responses:
+    description: Mutating operations should declare 4xx error responses.
+    severity: warn
+    given: "$.paths[*][post,put,patch,delete].responses"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          anyOf:
+            - required: ["400"]
+            - required: ["401"]
+            - required: ["403"]
+            - required: ["404"]
+
+  cloudevents-subscription-required-attributes:
+    description: Subscription schemas must include the CloudEvents-required `id`, `source`, and `sink` attributes.
+    severity: warn
+    given: "$.components.schemas.Subscription.properties"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          required: ["id", "source", "sink"]

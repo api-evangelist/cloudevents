@@ -16,7 +16,11 @@ tags:
   - Messaging
   - Specification
 created: '2026-03-16'
-modified: '2026-03-18'
+modified: '2026-04-26'
+x-type: standard
+x-governance: CNCF (Cloud Native Computing Foundation)
+x-status: Graduated
+x-spec-version: '1.0.2'
 specificationVersion: '0.19'
 type: Index
 apis:
@@ -266,6 +270,10 @@ common:
     url: asyncapi/cloudevents-http-asyncapi.yml
   - type: JSON-LD
     url: json-ld/cloudevents-context.jsonld
+  - type: Spectral
+    url: rules/cloudevents-rules.yml
+  - type: Naftiko Capabilities
+    url: capabilities/cloudevents-subscriptions-capabilities.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
