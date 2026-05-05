@@ -1,0 +1,13 @@
+{
+  "repo": "cloudevents",
+  "feeds": [
+    {
+      "source": "https://cloudevents.io/blog/",
+      "feed_url": "https://cloudevents.io/blog/index.xml",
+      "saved": 2,
+      "title": "The CloudEvents blog on CloudEvents"
+    }
+  ],
+  "post_count": 2,
+  "fetched": "2026-05-03T23:25:25Z"
+}
