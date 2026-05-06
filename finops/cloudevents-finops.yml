@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,214 +9,57 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: CloudEvents
 providerId: cloudevents
-publisherName: CloudEvents
-serviceCategory: API
+publisherName: Cloud Native Computing Foundation
+serviceCategory: Open Source Specification
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
-  - Cloud Native
-  - Events
-  - Graduated
-  - Interoperability
-  - Messaging
-  - Specification
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the CloudEvents API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+  - Cloud Native
+  - Open Source
+  - CNCF
+notes: CloudEvents is a free CNCF Graduated specification. There is no invoice, no usage meter, no commercial
+  surface to allocate. The shape below preserves the FinOps Framework structure but flags the artifact
+  as informational only — the meaningful FinOps surface is on the platforms that implement CloudEvents
+  (EventBridge, Event Grid, Eventarc, etc.).
+description: CloudEvents itself is a free, open-source CNCF specification with no commercial cost surface.
+  FinOps observation should focus on the platforms that emit or receive CloudEvents.
+sources:
+  - https://cloudevents.io/
+  - https://github.com/cloudevents/spec
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Free / Open Source
+  billingFrequency: not applicable
   billingCurrency: USD
-  chargeCategories:
-    - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
+  chargeCategories: []
 focusColumns:
   ServiceName: CloudEvents
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Open Source Specification
   ProviderName: CloudEvents
-  PublisherName: CloudEvents
-  InvoiceIssuerName: CloudEvents
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Cloud Native Computing Foundation
+  PricingCategory: Free
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: not_applicable
+    description: CloudEvents has no billable meters. Track consumption on the implementing platform (EventBridge,
+      Event Grid, Eventarc, NATS, Kafka, etc.).
+    unit: varies
     aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: CloudEvents Specification
-    baseURL: ''
-    tags:
-      - Events
-      - Specification
-      - Standards
-    serviceName: CloudEvents Specification
-    serviceCategory: API
-  - name: CloudEvents HTTP Protocol Binding
-    baseURL: ''
-    tags:
-      - HTTP
-      - Protocol Binding
-      - REST
-    serviceName: CloudEvents HTTP Protocol Binding
-    serviceCategory: API
-  - name: CloudEvents Kafka Protocol Binding
-    baseURL: ''
-    tags:
-      - Kafka
-      - Messaging
-      - Protocol Binding
-    serviceName: CloudEvents Kafka Protocol Binding
-    serviceCategory: API
-  - name: CloudEvents AMQP Protocol Binding
-    baseURL: ''
-    tags:
-      - AMQP
-      - Messaging
-      - Protocol Binding
-    serviceName: CloudEvents AMQP Protocol Binding
-    serviceCategory: API
-  - name: CloudEvents MQTT Protocol Binding
-    baseURL: ''
-    tags:
-      - IoT
-      - MQTT
-      - Protocol Binding
-    serviceName: CloudEvents MQTT Protocol Binding
-    serviceCategory: API
-  - name: CloudEvents NATS Protocol Binding
-    baseURL: ''
-    tags:
-      - Messaging
-      - NATS
-      - Protocol Binding
-    serviceName: CloudEvents NATS Protocol Binding
-    serviceCategory: API
-  - name: CloudEvents Subscriptions API
-    baseURL: ''
-    tags:
-      - REST
-      - Specification
-      - Subscriptions
-    serviceName: CloudEvents Subscriptions API
-    serviceCategory: API
-  - name: CloudEvents SQL (CESQL)
-    baseURL: ''
-    tags:
-      - Filtering
-      - Specification
-      - SQL
-    serviceName: CloudEvents SQL (CESQL)
-    serviceCategory: API
-  - name: CloudEvents Go SDK
-    baseURL: ''
-    tags:
-      - Client Library
-      - Go
-      - SDK
-    serviceName: CloudEvents Go SDK
-    serviceCategory: API
-  - name: CloudEvents JavaScript SDK
-    baseURL: ''
-    tags:
-      - Client Library
-      - JavaScript
-      - SDK
-    serviceName: CloudEvents JavaScript SDK
-    serviceCategory: API
-  - name: CloudEvents Java SDK
-    baseURL: ''
-    tags:
-      - Client Library
-      - Java
-      - SDK
-    serviceName: CloudEvents Java SDK
-    serviceCategory: API
-  - name: CloudEvents Python SDK
-    baseURL: ''
-    tags:
-      - Client Library
-      - Python
-      - SDK
-    serviceName: CloudEvents Python SDK
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+principles:
+  - name: Visibility
+    description: Observe CloudEvents traffic on the implementing platform's billing and metering surface;
+      CloudEvents itself produces no spend.
+  - name: Allocation
+    description: Tag the implementing platform's resources (event buses, subscriptions, brokers) to teams
+      consuming or producing CloudEvents.
+  - name: Optimization
+    description: Right-size payload sizes and event fan-out on the implementing platform; CloudEvents structure
+      itself is overhead-light by design.
+  - name: Accountability
+    description: Ownership flows to the team operating the implementing event platform, not CloudEvents
+      itself.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
