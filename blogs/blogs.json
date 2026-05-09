@@ -4,10 +4,10 @@
     {
       "source": "https://cloudevents.io/blog/",
       "feed_url": "https://cloudevents.io/blog/index.xml",
-      "saved": 2,
-      "title": "The CloudEvents blog on CloudEvents"
+      "title": "The CloudEvents blog on CloudEvents",
+      "saved": 0
     }
   ],
   "post_count": 2,
-  "fetched": "2026-05-03T23:25:25Z"
+  "fetched": "2026-05-09T20:17:51Z"
 }
