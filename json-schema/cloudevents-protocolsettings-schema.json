@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProtocolSettings",
+  "title": "ProtocolSettings",
+  "type": "object",
+  "description": "Protocol-specific delivery settings for the subscription. The applicable properties depend on the 'protocol' field of the subscription.",
+  "properties": {
+    "contentMode": {
+      "type": "string",
+      "description": "CloudEvents content mode for HTTP delivery. 'structured' places all event data in the body; 'binary' maps attributes to headers.",
+      "enum": [
+        "structured",
+        "binary"
+      ],
+      "default": "structured"
+    },
+    "headers": {
+      "type": "object",
+      "description": "Additional HTTP headers to include when delivering events over HTTP.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "method": {
+      "type": "string",
+      "description": "HTTP method to use when delivering events. Defaults to POST.",
+      "default": "POST"
+    }
+  }
+}

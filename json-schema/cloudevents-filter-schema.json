@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Filter",
+  "title": "Filter",
+  "type": "object",
+  "description": "A filter expression that constrains event delivery to events matching specific criteria. Filters can use attribute equality, CESQL expressions, or composite logic (all, any, not).",
+  "properties": {
+    "dialect": {
+      "type": "string",
+      "description": "Identifies the filter dialect. Use 'cesql' for CloudEvents SQL expressions, or 'exact'/'prefix'/'suffix' for simple attribute matching.",
+      "enum": [
+        "cesql",
+        "exact",
+        "prefix",
+        "suffix",
+        "all",
+        "any",
+        "not"
+      ]
+    },
+    "expression": {
+      "type": "string",
+      "description": "The filter expression in the specified dialect. For CESQL, this is a SQL-like expression referencing CloudEvent attribute names."
+    },
+    "filters": {
+      "type": "array",
+      "description": "For composite filter dialects (all, any, not), the nested filters to evaluate.",
+      "items": {
+        "$ref": "#/components/schemas/Filter"
+      }
+    }
+  }
+}

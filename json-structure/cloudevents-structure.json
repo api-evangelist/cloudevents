@@ -1,0 +1,94 @@
+{
+  "provider": "CloudEvents",
+  "providerId": "cloudevents",
+  "kind": "json-structure",
+  "description": "Structural overview of the CloudEvents API surface; extracted from openapi/.",
+  "schemaCount": 5,
+  "operationCount": 5,
+  "schemas": [
+    {
+      "name": "Subscription",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "id",
+        "sink",
+        "protocol"
+      ]
+    },
+    {
+      "name": "SubscriptionRequest",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "sink",
+        "protocol"
+      ]
+    },
+    {
+      "name": "ProtocolSettings",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "Filter",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "Error",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/subscriptions",
+      "operationId": "listSubscriptions",
+      "summary": "CloudEvents List subscriptions",
+      "tags": [
+        "Subscriptions"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/subscriptions",
+      "operationId": "createSubscription",
+      "summary": "CloudEvents Create a subscription",
+      "tags": [
+        "Subscriptions"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{id}",
+      "operationId": "getSubscription",
+      "summary": "CloudEvents Get a subscription",
+      "tags": [
+        "Subscriptions"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{id}",
+      "operationId": "updateSubscription",
+      "summary": "CloudEvents Update a subscription",
+      "tags": [
+        "Subscriptions"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{id}",
+      "operationId": "deleteSubscription",
+      "summary": "CloudEvents Delete a subscription",
+      "tags": [
+        "Subscriptions"
+      ]
+    }
+  ]
+}

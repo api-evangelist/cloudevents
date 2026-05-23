@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Subscription",
+  "title": "Subscription",
+  "type": "object",
+  "description": "A CloudEvents subscription describing an event stream source, delivery sink, and filter criteria. Once created, the broker delivers all matching events from the specified source to the sink endpoint.",
+  "required": [
+    "id",
+    "sink",
+    "protocol"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this subscription assigned by the broker. Immutable once set."
+    },
+    "sink": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URL of the event consumer. Events matching the filter are delivered here using the protocol specified by the 'protocol' field."
+    },
+    "protocol": {
+      "type": "string",
+      "description": "The protocol used to deliver events to the sink, such as HTTP or AMQP. Must match a protocol the sink endpoint supports.",
+      "enum": [
+        "HTTP",
+        "AMQP",
+        "MQTT",
+        "NATS",
+        "Kafka"
+      ]
+    },
+    "protocolSettings": {
+      "$ref": "#/components/schemas/ProtocolSettings"
+    },
+    "source": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "Identifies the origin of events this subscription applies to. Matches the 'source' attribute of CloudEvents. If omitted, events from any source are eligible."
+    },
+    "types": {
+      "type": "array",
+      "description": "List of CloudEvent types this subscription is interested in. If omitted or empty, all event types from the source are delivered.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "filters": {
+      "type": "array",
+      "description": "A list of filter expressions in CloudEvents CESQL or dialect format that further narrow which events are delivered. All filters must match for an event to be delivered.",
+      "items": {
+        "$ref": "#/components/schemas/Filter"
+      }
+    },
+    "config": {
+      "type": "object",
+      "description": "Additional implementation-specific configuration for the subscription. The properties accepted here are defined by the specific broker implementation.",
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,8 @@
+name: CloudEvents Domain Vocabulary
+provider: CloudEvents
+providerId: cloudevents
+description: Tag-derived vocabulary for the CloudEvents API surface; sourced from openapi/ tags.
+terms:
+- term: Subscriptions
+  description: Operations for creating and managing event delivery subscriptions. Each subscription specifies a source of
+    events, optional filter criteria, and a sink where matched events are delivered.

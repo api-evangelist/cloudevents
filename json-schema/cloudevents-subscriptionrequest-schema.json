@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubscriptionRequest",
+  "title": "SubscriptionRequest",
+  "type": "object",
+  "description": "Request body for creating or updating a CloudEvents subscription. Specifies the sink, protocol, and optional filter criteria.",
+  "required": [
+    "sink",
+    "protocol"
+  ],
+  "properties": {
+    "sink": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URL of the event consumer where matching events will be delivered."
+    },
+    "protocol": {
+      "type": "string",
+      "description": "The protocol to use when delivering events to the sink.",
+      "enum": [
+        "HTTP",
+        "AMQP",
+        "MQTT",
+        "NATS",
+        "Kafka"
+      ]
+    },
+    "protocolSettings": {
+      "$ref": "#/components/schemas/ProtocolSettings"
+    },
+    "source": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "Constrains the subscription to events from this source URI. If omitted, events from all sources are eligible for delivery."
+    },
+    "types": {
+      "type": "array",
+      "description": "List of CloudEvent types to subscribe to. Events with a 'type' attribute matching any entry in this list are eligible for delivery.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "filters": {
+      "type": "array",
+      "description": "Additional filter expressions using CloudEvents filter dialects or CESQL to select which events are delivered.",
+      "items": {
+        "$ref": "#/components/schemas/Filter"
+      }
+    },
+    "config": {
+      "type": "object",
+      "description": "Additional broker-specific configuration properties for this subscription.",
+      "additionalProperties": true
+    }
+  }
+}
