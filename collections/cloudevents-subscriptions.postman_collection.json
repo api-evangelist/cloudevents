@@ -1,0 +1,1317 @@
+{
+  "item": [
+    {
+      "id": "b548cca2-71d0-4673-bfaf-45e43e1373cc",
+      "name": "Subscriptions",
+      "description": {
+        "content": "Operations for creating and managing event delivery subscriptions. Each subscription specifies a source of events, optional filter criteria, and a sink where matched events are delivered.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ddfcbe23-a5eb-426f-a7cb-b30b95f32d87",
+          "name": "CloudEvents List subscriptions",
+          "request": {
+            "name": "CloudEvents List subscriptions",
+            "description": {
+              "content": "Returns a list of all subscriptions currently managed by this endpoint. Each subscription entry includes its identifier, sink, source, and current filter configuration. The response may be paginated for brokers with large numbers of subscriptions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the CloudEvents-compatible event broker",
+                  "type": "any",
+                  "value": "{{broker-host}}",
+                  "key": "broker-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdf17cd2-f21f-425a-b348-64c086f34441",
+              "name": "List of subscriptions returned successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"sink\": \"http://ShPP.iwoWXkcH6d4duHmUs9,GR5ThQzPIdl9td4nVq9\",\n    \"protocol\": \"NATS\",\n    \"protocolSettings\": {\n      \"contentMode\": \"structured\",\n      \"headers\": {\n        \"key_0\": \"string\"\n      },\n      \"method\": \"POST\"\n    },\n    \"source\": \"https://eW.lfwKaassF-XJxkiz8IH\",\n    \"types\": [\n      \"string\",\n      \"string\"\n    ],\n    \"filters\": [\n      {\n        \"dialect\": \"not\",\n        \"expression\": \"string\",\n        \"filters\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          }\n        ]\n      },\n      {\n        \"dialect\": \"cesql\",\n        \"expression\": \"string\",\n        \"filters\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          }\n        ]\n      }\n    ],\n    \"config\": {\n      \"key_0\": 2021.0288027729616,\n      \"key_1\": 8923.365378488419,\n      \"key_2\": true\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"sink\": \"https://SUOqpKMrDN.tkqkfq7PSd8wVft01qyupoxKwSshN+YWtSf7rftK\",\n    \"protocol\": \"NATS\",\n    \"protocolSettings\": {\n      \"contentMode\": \"structured\",\n      \"headers\": {\n        \"key_0\": \"string\"\n      },\n      \"method\": \"POST\"\n    },\n    \"source\": \"https://kGKJ.qwmds7PqOzP8LjGCaRz\",\n    \"types\": [\n      \"string\",\n      \"string\"\n    ],\n    \"filters\": [\n      {\n        \"dialect\": \"suffix\",\n        \"expression\": \"string\",\n        \"filters\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          }\n        ]\n      },\n      {\n        \"dialect\": \"cesql\",\n        \"expression\": \"string\",\n        \"filters\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n          }\n        ]\n      }\n    ],\n    \"config\": {\n      \"key_0\": 6598.447005817671\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3a26ac9-f7b1-4d17-bdd0-ac7bb68934f5",
+              "name": "Authentication credentials missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a68331de-a72c-4eee-af1d-70b1a4b9e830",
+              "name": "Caller does not have permission to perform this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24f88059-e657-4813-9738-3d6349830296",
+          "name": "CloudEvents Create a subscription",
+          "request": {
+            "name": "CloudEvents Create a subscription",
+            "description": {
+              "content": "Creates a new subscription to an event stream. The request body specifies the sink (delivery endpoint), the source of events, optional event type filters, and protocol settings. Upon successful creation, the broker begins delivering matching events to the specified sink. The response returns the fully populated subscription object including its assigned identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the CloudEvents-compatible event broker",
+                  "type": "any",
+                  "value": "{{broker-host}}",
+                  "key": "broker-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"<string>\",\n      \"expression\": \"<string>\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"<string>\",\n      \"expression\": \"<string>\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": 318\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3656994c-d7b1-4315-8d72-f0d2fd13f4c8",
+              "name": "Subscription created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "URL of the newly created subscription",
+                  "key": "Location",
+                  "value": "https://ipALVlEfYaessASzReXooinrjKcmeIX.qcbwptHWgn5f5CofFwL3bv4ISzZghwKccPKe0xt30CIFy+r.RSFjuQu9yglQCWTw1rr"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"sink\": \"http://IjbTApwtYRQe.fmgyczzt4tq2IrtDSzF5Zb3ijICt\",\n  \"protocol\": \"HTTP\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"http://oYDwpRZQBBWBbZ.powYAJplaWAb+ZSkbqJag0EgVmNBo3qzVVU?cvnbw&\",\n  \"types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"exact\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"any\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": true,\n    \"key_1\": 3270\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c13f6504-0b90-4e22-ad60-53ac61b66d0d",
+              "name": "Invalid request body or parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c85394f8-4c9c-4c0b-8483-77922b331a67",
+              "name": "Authentication credentials missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad85a5ca-5090-4987-906e-7c75ca76eb3c",
+              "name": "Caller does not have permission to perform this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "685a9bdc-71e6-4b57-a8e0-64fd12487686",
+          "name": "CloudEvents Get a subscription",
+          "request": {
+            "name": "CloudEvents Get a subscription",
+            "description": {
+              "content": "Returns the details of a specific subscription identified by its unique identifier. The response includes the current configuration including sink, source, filters, and any protocol settings. Returns 404 if the subscription does not exist or is not accessible to the caller.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier of the subscription"
+                },
+                {
+                  "description": "Hostname of the CloudEvents-compatible event broker",
+                  "type": "any",
+                  "value": "{{broker-host}}",
+                  "key": "broker-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b59cea33-0a30-463e-b276-6d8e5cf7f89b",
+              "name": "Subscription details returned successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"sink\": \"http://IjbTApwtYRQe.fmgyczzt4tq2IrtDSzF5Zb3ijICt\",\n  \"protocol\": \"HTTP\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"http://oYDwpRZQBBWBbZ.powYAJplaWAb+ZSkbqJag0EgVmNBo3qzVVU?cvnbw&\",\n  \"types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"exact\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"any\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": true,\n    \"key_1\": 3270\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a82dbd91-f7c1-4e36-a33d-a56a8c6f1446",
+              "name": "Authentication credentials missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c6e3c0e-e7ae-495f-bc4d-f8de0f9e6a29",
+              "name": "Caller does not have permission to perform this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b743400-c1b1-4848-883a-86d7cc90ab50",
+              "name": "Subscription not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c1c1c78-aef4-477a-9b4f-8bca66a54b1f",
+          "name": "CloudEvents Update a subscription",
+          "request": {
+            "name": "CloudEvents Update a subscription",
+            "description": {
+              "content": "Replaces the configuration of an existing subscription. The entire subscription object must be provided; partial updates are not supported by this operation. Updating a subscription may temporarily interrupt event delivery while the new configuration takes effect.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier of the subscription"
+                },
+                {
+                  "description": "Hostname of the CloudEvents-compatible event broker",
+                  "type": "any",
+                  "value": "{{broker-host}}",
+                  "key": "broker-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"<string>\",\n      \"expression\": \"<string>\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"<string>\",\n      \"expression\": \"<string>\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": 318\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac77b1b9-bbba-4a44-8d4d-c46089f2cf56",
+              "name": "Subscription updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"sink\": \"http://IjbTApwtYRQe.fmgyczzt4tq2IrtDSzF5Zb3ijICt\",\n  \"protocol\": \"HTTP\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"http://oYDwpRZQBBWBbZ.powYAJplaWAb+ZSkbqJag0EgVmNBo3qzVVU?cvnbw&\",\n  \"types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"exact\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"any\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": true,\n    \"key_1\": 3270\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15eb493e-b883-4186-91cd-58d5a5672d15",
+              "name": "Invalid request body or parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e13336d-d230-4d38-9c0b-7815ee8010b2",
+              "name": "Authentication credentials missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "00b7d8e2-c43f-4b4d-868f-8724ff3482d0",
+              "name": "Caller does not have permission to perform this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "627e7e80-9548-4791-a45c-bd788e71035f",
+              "name": "Subscription not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"<uri>\",\n  \"protocol\": \"<string>\",\n  \"protocolSettings\": {\n    \"contentMode\": \"structured\",\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"method\": \"POST\"\n  },\n  \"source\": \"<uri-reference>\",\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filters\": [\n    {\n      \"dialect\": \"suffix\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    },\n    {\n      \"dialect\": \"cesql\",\n      \"expression\": \"string\",\n      \"filters\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Filter detected>\"\n        }\n      ]\n    }\n  ],\n  \"config\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": 1391.4459362020991\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57dafc83-0672-4695-ae7c-d1a38f0b3286",
+          "name": "CloudEvents Delete a subscription",
+          "request": {
+            "name": "CloudEvents Delete a subscription",
+            "description": {
+              "content": "Deletes an existing subscription. Once deleted, the broker stops delivering events to the subscription's sink. In-flight events at the time of deletion may or may not be delivered depending on broker implementation. Returns 404 if the subscription does not exist.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier of the subscription"
+                },
+                {
+                  "description": "Hostname of the CloudEvents-compatible event broker",
+                  "type": "any",
+                  "value": "{{broker-host}}",
+                  "key": "broker-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bccebe4a-7999-4dd4-b5b0-e08b7508d845",
+              "name": "Subscription deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d674066-5e9d-4dd8-8fce-d6dff185bed4",
+              "name": "Authentication credentials missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d630962-87f4-4cae-acb4-e56219f5333c",
+              "name": "Caller does not have permission to perform this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ac6fbf7-17dc-40af-992d-a61853ac68c5",
+              "name": "Subscription not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier of the subscription"
+                    },
+                    {
+                      "description": "Hostname of the CloudEvents-compatible event broker",
+                      "type": "any",
+                      "value": "{{broker-host}}",
+                      "key": "broker-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3912,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the CloudEvents-compatible event broker",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "example.com",
+      "key": "broker-host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{broker-host}}/subscriptions",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e7d7e1e6-f3dc-40ac-9687-ee722e52e2a5",
+    "name": "CloudEvents Subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The CloudEvents Subscriptions API provides a vendor-neutral REST interface for managing subscriptions to event streams. Clients can create, list, retrieve, update, and delete subscriptions with filter criteria that select which events to deliver and where to deliver them. The API enables consistent event delivery configuration across different event brokers, message buses, and cloud event services without lock-in to a specific provider's interface.\n\nContact Support:\n Name: CloudEvents Community",
+      "type": "text/plain"
+    }
+  }
+}

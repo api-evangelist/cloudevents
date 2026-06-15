@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CloudEvents Subscriptions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CloudEvents List subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{broker-host}/subscriptions/subscriptions"
+          },
+          "docs": "Returns a list of all subscriptions currently managed by this endpoint. Each subscription entry includes its identifier, sink, source, and current filter configuration. The response may be paginated for brokers with large numbers of subscriptions."
+        },
+        {
+          "info": {
+            "name": "CloudEvents Create a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{broker-host}/subscriptions/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new subscription to an event stream. The request body specifies the sink (delivery endpoint), the source of events, optional event type filters, and protocol settings. Upon successful creation, the broker begins delivering matching events to the specified sink. The response returns the fully populated subscription object including its assigned identifier."
+        },
+        {
+          "info": {
+            "name": "CloudEvents Get a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{broker-host}/subscriptions/subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the subscription"
+              }
+            ]
+          },
+          "docs": "Returns the details of a specific subscription identified by its unique identifier. The response includes the current configuration including sink, source, filters, and any protocol settings. Returns 404 if the subscription does not exist or is not accessible to the caller."
+        },
+        {
+          "info": {
+            "name": "CloudEvents Update a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{broker-host}/subscriptions/subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the subscription"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replaces the configuration of an existing subscription. The entire subscription object must be provided; partial updates are not supported by this operation. Updating a subscription may temporarily interrupt event delivery while the new configuration takes effect."
+        },
+        {
+          "info": {
+            "name": "CloudEvents Delete a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{broker-host}/subscriptions/subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the subscription"
+              }
+            ]
+          },
+          "docs": "Deletes an existing subscription. Once deleted, the broker stops delivering events to the subscription's sink. In-flight events at the time of deletion may or may not be delivered depending on broker implementation. Returns 404 if the subscription does not exist."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
