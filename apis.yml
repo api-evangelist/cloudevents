@@ -6,7 +6,7 @@ description: >-
   and consumers. The specification includes protocol bindings for HTTP, AMQP, Kafka, MQTT, and NATS, along with SDKs in
   multiple languages.
 url: https://cloudevents.io
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Cloud Native
   - Events
@@ -30,7 +30,7 @@ apis:
       source, type, id, and specversion. It provides a vendor-neutral way to describe events that enables consistent
       routing, filtering, and processing across different systems and cloud providers.
     humanURL: https://cloudevents.io/
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md
@@ -55,7 +55,7 @@ apis:
       where the entire event is in the HTTP body, and binary content mode where event attributes are mapped to HTTP
       headers. This enables REST APIs to produce and consume standardized events.
     humanURL: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md
@@ -72,7 +72,7 @@ apis:
       how CloudEvents attributes are encoded as Kafka message headers and how the event payload is placed in the Kafka
       message value, enabling standardized event interchange over Kafka topics.
     humanURL: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md
@@ -89,7 +89,7 @@ apis:
       content mode, event attributes and data are placed in the AMQP message application data section; in binary content
       mode, event data is placed as-is with attributes mapped to AMQP message properties.
     humanURL: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/amqp-protocol-binding.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/amqp-protocol-binding.md
@@ -106,7 +106,7 @@ apis:
       supports both structured and binary content modes for IoT and constrained device environments that use MQTT as
       their messaging protocol.
     humanURL: https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/mqtt-protocol-binding.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/mqtt-protocol-binding.md
@@ -121,7 +121,7 @@ apis:
       to be produced and consumed over the NATS messaging system, supporting both publish/subscribe and request/reply
       patterns.
     humanURL: https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md
@@ -136,7 +136,7 @@ apis:
       streams. It enables clients to create, list, update, and delete subscriptions with filter criteria, providing a
       vendor-neutral way to manage event delivery configurations across different event brokers and message systems.
     humanURL: https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md
@@ -153,7 +153,7 @@ apis:
       routing CloudEvents based on their attributes. It provides a SQL-like syntax for writing event filter expressions
       that can be used across different event processing platforms and systems.
     humanURL: https://github.com/cloudevents/spec/blob/main/cesql/spec.md
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/spec/blob/main/cesql/spec.md
@@ -168,7 +168,7 @@ apis:
       It supports all CloudEvents protocol bindings and content modes, and includes client implementations for HTTP,
       Kafka, and other transports.
     humanURL: https://github.com/cloudevents/sdk-go
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://cloudevents.github.io/sdk-go/
@@ -184,7 +184,7 @@ apis:
       The official JavaScript SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Node.js
       and browser environments. It supports structured and binary content modes over HTTP and other transports.
     humanURL: https://github.com/cloudevents/sdk-javascript
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/sdk-javascript/blob/main/README.md
@@ -201,7 +201,7 @@ apis:
       applications. It includes support for HTTP, Kafka, and other transports, and integrates with popular Java
       frameworks.
     humanURL: https://github.com/cloudevents/sdk-java
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/sdk-java/blob/main/README.md
@@ -217,7 +217,7 @@ apis:
       The official Python SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Python
       applications. It supports HTTP transport bindings and both structured and binary content modes.
     humanURL: https://github.com/cloudevents/sdk-python
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     properties:
       - type: Documentation
         url: https://github.com/cloudevents/sdk-python/blob/main/README.md
