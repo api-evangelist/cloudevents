@@ -228,6 +228,8 @@ apis:
       - Python
       - SDK
 common:
+  - type: DomainSecurity
+    url: security/cloudevents-domain-security.yml
   - type: Website
     url: https://cloudevents.io
   - type: Documentation
