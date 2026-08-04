@@ -1,0 +1,14 @@
+{
+  "provider": "cloudevents",
+  "sources": [
+    "cloudevents-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "cloudevents-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
