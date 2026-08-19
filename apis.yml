@@ -32,7 +32,7 @@ kind: standard
 x-governance: CNCF (Cloud Native Computing Foundation)
 x-status: Graduated
 x-spec-version: 1.0.2
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 type: Index
 apis:
 - aid: cloudevents:cloudevents-spec
