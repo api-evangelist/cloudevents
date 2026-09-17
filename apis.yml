@@ -39,6 +39,7 @@ tags:
   - Interoperability
   - Messaging
   - Specification
+  - CloudEvents
 tags_raw:
   - Cloud Native
   - Events
