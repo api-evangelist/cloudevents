@@ -137,6 +137,16 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   schemas:
+    Error:
+      type: object
+      description: Standard error response body returned for API failures.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code of the error.
+        message:
+          type: string
+          description: Human-readable error message describing what went wrong.
     Subscription:
       type: object
       description: A CloudEvents subscription describing an event stream source, delivery sink, and filter criteria. Once created, the broker delivers all matching events from the specified source to the sink endpoint.
@@ -181,59 +191,6 @@ components:
           type: object
           description: Additional implementation-specific configuration for the subscription. The properties accepted here are defined by the specific broker implementation.
           additionalProperties: true
-    ProtocolSettings:
-      type: object
-      description: Protocol-specific delivery settings for the subscription. The applicable properties depend on the 'protocol' field of the subscription.
-      properties:
-        contentMode:
-          type: string
-          description: CloudEvents content mode for HTTP delivery. 'structured' places all event data in the body; 'binary' maps attributes to headers.
-          enum:
-          - structured
-          - binary
-          default: structured
-        headers:
-          type: object
-          description: Additional HTTP headers to include when delivering events over HTTP.
-          additionalProperties:
-            type: string
-        method:
-          type: string
-          description: HTTP method to use when delivering events. Defaults to POST.
-          default: POST
-    Error:
-      type: object
-      description: Standard error response body returned for API failures.
-      properties:
-        code:
-          type: integer
-          description: HTTP status code of the error.
-        message:
-          type: string
-          description: Human-readable error message describing what went wrong.
-    Filter:
-      type: object
-      description: A filter expression that constrains event delivery to events matching specific criteria. Filters can use attribute equality, CESQL expressions, or composite logic (all, any, not).
-      properties:
-        dialect:
-          type: string
-          description: Identifies the filter dialect. Use 'cesql' for CloudEvents SQL expressions, or 'exact'/'prefix'/'suffix' for simple attribute matching.
-          enum:
-          - cesql
-          - exact
-          - prefix
-          - suffix
-          - all
-          - any
-          - not
-        expression:
-          type: string
-          description: The filter expression in the specified dialect. For CESQL, this is a SQL-like expression referencing CloudEvent attribute names.
-        filters:
-          type: array
-          description: For composite filter dialects (all, any, not), the nested filters to evaluate.
-          items:
-            $ref: '#/components/schemas/Filter'
     SubscriptionRequest:
       type: object
       description: Request body for creating or updating a CloudEvents subscription. Specifies the sink, protocol, and optional filter criteria.
@@ -274,15 +231,58 @@ components:
           type: object
           description: Additional broker-specific configuration properties for this subscription.
           additionalProperties: true
+    ProtocolSettings:
+      type: object
+      description: Protocol-specific delivery settings for the subscription. The applicable properties depend on the 'protocol' field of the subscription.
+      properties:
+        contentMode:
+          type: string
+          description: CloudEvents content mode for HTTP delivery. 'structured' places all event data in the body; 'binary' maps attributes to headers.
+          enum:
+          - structured
+          - binary
+          default: structured
+        headers:
+          type: object
+          description: Additional HTTP headers to include when delivering events over HTTP.
+          additionalProperties:
+            type: string
+        method:
+          type: string
+          description: HTTP method to use when delivering events. Defaults to POST.
+          default: POST
+    Filter:
+      type: object
+      description: A filter expression that constrains event delivery to events matching specific criteria. Filters can use attribute equality, CESQL expressions, or composite logic (all, any, not).
+      properties:
+        dialect:
+          type: string
+          description: Identifies the filter dialect. Use 'cesql' for CloudEvents SQL expressions, or 'exact'/'prefix'/'suffix' for simple attribute matching.
+          enum:
+          - cesql
+          - exact
+          - prefix
+          - suffix
+          - all
+          - any
+          - not
+        expression:
+          type: string
+          description: The filter expression in the specified dialect. For CESQL, this is a SQL-like expression referencing CloudEvent attribute names.
+        filters:
+          type: array
+          description: For composite filter dialects (all, any, not), the nested filters to evaluate.
+          items:
+            $ref: '#/components/schemas/Filter'
   responses:
-    Unauthorized:
-      description: Authentication credentials missing or invalid
+    NotFound:
+      description: Subscription not found
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Subscription not found
+    BadRequest:
+      description: Invalid request body or parameters
       content:
         application/json:
           schema:
@@ -293,8 +293,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Invalid request body or parameters
+    Unauthorized:
+      description: Authentication credentials missing or invalid
       content:
         application/json:
           schema:
