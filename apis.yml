@@ -280,6 +280,12 @@ apis:
   - type: Documentation
     url: https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md
 common:
+  - type: Plans
+    url: plans/cloudevents-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cloudevents-rate-limits.yml
+  - type: FinOps
+    url: finops/cloudevents-finops.yml
   - type: IssueTracker
     url: https://github.com/cloudevents/spec/issues
   - type: ContributionGuide
