@@ -14,12 +14,8 @@
       "title": "",
       "saved": 0,
       "method": "feed"
-    },
-    {
-      "source": "https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md",
-      "error": "HTTPError"
     }
   ],
   "post_count": 2,
-  "fetched": "2026-10-10T13:15:00Z"
+  "fetched": "2026-10-17T14:53:57Z"
 }
