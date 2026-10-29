@@ -1,4 +1,4 @@
-# CloudEvents (cloudevents)
+# CloudEvents
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,273 +66,178 @@
 
 CloudEvents is a CNCF graduated specification for describing event data in a common way. It provides a consistent format for event metadata across services, platforms, and systems, enabling interoperability between event producers and consumers. The specification includes protocol bindings for HTTP, AMQP, Kafka, MQTT, and NATS, along with SDKs in multiple languages.
 
-**APIs.json:** [https://cloudevents.io](https://cloudevents.io)
+**Areas:** CloudEvents · Cloud-Native · Event · Graduated · Interoperability · Messaging · Specification
 
-## Scope
+## CloudEvents on APIs.io
 
-- **Type:** Index
+Everything profiled for CloudEvents is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cloudevents/](https://apis.io/providers/cloudevents/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (12)
 
-- Cloud Native
-- Events
-- Graduated
-- Interoperability
-- Messaging
-- Specification
+- [CloudEvents Specification](https://apis.io/apis/cloudevents/cloudevents-spec/) — The CloudEvents specification defines a set of metadata attributes that must be present in every event, including source, type, id, and specversion. It…
+- [CloudEvents HTTP Protocol Binding](https://apis.io/apis/cloudevents/cloudevents-http-binding/) — The HTTP protocol binding defines how CloudEvents are transported using HTTP, including structured content mode where the entire event is in the HTTP body,…
+- [CloudEvents Kafka Protocol Binding](https://apis.io/apis/cloudevents/cloudevents-kafka-binding/) — The Kafka protocol binding for CloudEvents defines how events are mapped to Apache Kafka messages. It specifies how CloudEvents attributes are encoded as…
+- [CloudEvents AMQP Protocol Binding](https://apis.io/apis/cloudevents/cloudevents-amqp-binding/) — The AMQP protocol binding for CloudEvents defines how events are mapped to OASIS AMQP 1.0 messages. In structured content mode, event attributes and data…
+- [CloudEvents MQTT Protocol Binding](https://apis.io/apis/cloudevents/cloudevents-mqtt-binding/) — The MQTT protocol binding for CloudEvents defines how events are mapped to MQTT 3.1.1 and MQTT 5.0 messages. It supports both structured and binary content…
+- [CloudEvents NATS Protocol Binding](https://apis.io/apis/cloudevents/cloudevents-nats-binding/) — The NATS protocol binding for CloudEvents defines how events are mapped to NATS messages. It enables CloudEvents to be produced and consumed over the NATS…
+- [CloudEvents SQL (CESQL)](https://apis.io/apis/cloudevents/cloudevents-cesql/) — CloudEvents SQL (CESQL) is a v1.0 specification that defines a standardized query language for filtering and routing CloudEvents based on their attributes.…
+- [CloudEvents Go SDK](https://apis.io/apis/cloudevents/cloudevents-sdk-go/) — The official Go SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Go applications. It supports all CloudEvents protocol…
+- [CloudEvents JavaScript SDK](https://apis.io/apis/cloudevents/cloudevents-sdk-javascript/) — The official JavaScript SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Node.js and browser environments. It supports…
+- [CloudEvents Java SDK](https://apis.io/apis/cloudevents/cloudevents-sdk-java/) — The official Java SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Java applications. It includes support for HTTP, Kafka,…
+- [CloudEvents Python SDK](https://apis.io/apis/cloudevents/cloudevents-sdk-python/) — The official Python SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Python applications. It supports HTTP transport…
+- [CloudEvents Subscriptions API](https://apis.io/apis/cloudevents/cloudevents-subscriptions-api/) — Operations for creating and managing event delivery subscriptions. Each subscription specifies a source of events, optional filter criteria, and a sink…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### CloudEvents Specification
+Event-driven and webhook contracts.
 
-The CloudEvents specification defines a set of metadata attributes that must be present in every event, including source, type, id, and specversion. It provides a vendor-neutral way to describe events that enables consistent routing, filtering, and processing across different systems and cloud providers.
+- [CloudEvents HTTP Delivery](https://apis.io/asyncapis/cloudevents/cloudevents-http-asyncapi/)
 
-- **Human URL:** [https://cloudevents.io/](https://cloudevents.io/)
+#### Event channels (2)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- Events
-- Specification
-- Standards
+- [/batch](https://apis.io/channels/cloudevents/batch/)
+- [/](https://apis.io/channels/cloudevents/untitled/)
 
-#### Properties
+#### Agentic access (1)
 
-- [Documentation](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md)
-- [Reference](https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md)
-- [GitHub Repository](https://github.com/cloudevents/spec)
-- [Changelog](https://github.com/cloudevents/spec/releases)
-- [JSON Schema](json-schema/cloudevents-event-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [AsyncAPI](asyncapi/cloudevents-http-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### CloudEvents HTTP Protocol Binding
+- [Cloudevents Agentic Access](https://apis.io/agentic-access/cloudevents/cloudevents-agentic-access/)
 
-The HTTP protocol binding defines how CloudEvents are transported using HTTP, including structured content mode where the entire event is in the HTTP body, and binary content mode where event attributes are mapped to HTTP headers. This enables REST APIs to produce and consume standardized events.
+#### JSON Schema (6)
 
-- **Human URL:** [https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md)
+The data models the API reads and writes.
 
-#### Tags
+- [Error](https://apis.io/schemas/cloudevents/cloudevents-error/)
+- [CloudEvent](https://apis.io/schemas/cloudevents/cloudevents-event/)
+- [Filter](https://apis.io/schemas/cloudevents/cloudevents-filter/)
+- [ProtocolSettings](https://apis.io/schemas/cloudevents/cloudevents-protocolsettings/)
+- [Subscription](https://apis.io/schemas/cloudevents/cloudevents-subscription/)
+- [SubscriptionRequest](https://apis.io/schemas/cloudevents/cloudevents-subscriptionrequest/)
 
-- HTTP
-- Protocol Binding
-- REST
+#### JSON Structure (1)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md)
-- [Reference](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cloudevents Structure](https://apis.io/json-structure/cloudevents/cloudevents-structure/)
 
-### CloudEvents Kafka Protocol Binding
+#### JSON-LD (1)
 
-The Kafka protocol binding for CloudEvents defines how events are mapped to Apache Kafka messages. It specifies how CloudEvents attributes are encoded as Kafka message headers and how the event payload is placed in the Kafka message value, enabling standardized event interchange over Kafka topics.
+Linked-data contexts for the provider's vocabulary.
 
-- **Human URL:** [https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md)
+- [Cloudevents Context](https://apis.io/jsonld/cloudevents/cloudevents-context/)
 
-#### Tags
+#### Vocabulary (1)
 
-- Kafka
-- Messaging
-- Protocol Binding
+The provider's domain terms, defined.
 
-#### Properties
+- [CloudEvents Domain Vocabulary](https://apis.io/vocabularies/cloudevents/cloudevents-vocabulary/)
 
-- [Documentation](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md)
-- [Reference](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/kafka-protocol-binding.md)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (2)
 
-### CloudEvents AMQP Protocol Binding
+Postman and Open Collection request collections.
 
-The AMQP protocol binding for CloudEvents defines how events are mapped to OASIS AMQP 1.0 messages. In structured content mode, event attributes and data are placed in the AMQP message application data section; in binary content mode, event data is placed as-is with attributes mapped to AMQP message properties.
+- [CloudEvents Subscriptions API](https://apis.io/collections/cloudevents/open-cloudevents-subscriptions/)
+- [CloudEvents Subscriptions API](https://apis.io/collections/cloudevents/open-cloudevents-subscriptions-api/)
 
-- **Human URL:** [https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/amqp-protocol-binding.md](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/amqp-protocol-binding.md)
+#### Governance rules (3)
 
-#### Tags
+Spectral rulesets for the provider's contracts.
 
-- AMQP
-- Messaging
-- Protocol Binding
+- [CloudEvents — asyncapi rules](https://apis.io/rules/cloudevents/cloudevents-asyncapi-spectral-rules/)
+- [CloudEvents — jsonschema rules](https://apis.io/rules/cloudevents/cloudevents-jsonschema-spectral-rules/)
+- [CloudEvents API Rules](https://apis.io/rules/cloudevents/cloudevents-rules/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/amqp-protocol-binding.md)
-- [Reference](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/amqp-protocol-binding.md)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### CloudEvents MQTT Protocol Binding
+- [Cloudevents Domain Security](https://apis.io/security/cloudevents/cloudevents-domain-security/)
 
-The MQTT protocol binding for CloudEvents defines how events are mapped to MQTT 3.1.1 and MQTT 5.0 messages. It supports both structured and binary content modes for IoT and constrained device environments that use MQTT as their messaging protocol.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/mqtt-protocol-binding.md](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/mqtt-protocol-binding.md)
+Published plans, tiers and prices.
 
-#### Tags
+- [Cloudevents Plans Pricing](https://apis.io/plans/cloudevents/cloudevents-plans-pricing/)
 
-- IoT
-- MQTT
-- Protocol Binding
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/mqtt-protocol-binding.md)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cloudevents Rate Limits](https://apis.io/rate-limits/cloudevents/cloudevents-rate-limits/)
 
-### CloudEvents NATS Protocol Binding
+#### FinOps (1)
 
-The NATS protocol binding for CloudEvents defines how events are mapped to NATS messages. It enables CloudEvents to be produced and consumed over the NATS messaging system, supporting both publish/subscribe and request/reply patterns.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md)
+- [Cloudevents Finops](https://apis.io/finops/cloudevents/cloudevents-finops/)
 
-#### Tags
+## Where to find this API
 
-- Messaging
-- NATS
-- Protocol Binding
-
-#### Properties
-
-- [Documentation](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CloudEvents Subscriptions API
-
-The CloudEvents Subscriptions API specification defines a standard REST API for managing subscriptions to event streams. It enables clients to create, list, update, and delete subscriptions with filter criteria, providing a vendor-neutral way to manage event delivery configurations across different event brokers and message systems.
-
-- **Human URL:** [https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md](https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md)
-
-#### Tags
-
-- REST
-- Specification
-- Subscriptions
-
-#### Properties
-
-- [Documentation](https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md)
-- [OpenAPI](openapi/cloudevents-subscriptions-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CloudEvents SQL (CESQL)
-
-CloudEvents SQL (CESQL) is a v1.0 specification that defines a standardized query language for filtering and routing CloudEvents based on their attributes. It provides a SQL-like syntax for writing event filter expressions that can be used across different event processing platforms and systems.
-
-- **Human URL:** [https://github.com/cloudevents/spec/blob/main/cesql/spec.md](https://github.com/cloudevents/spec/blob/main/cesql/spec.md)
-
-#### Tags
-
-- Filtering
-- Specification
-- SQL
-
-#### Properties
-
-- [Documentation](https://github.com/cloudevents/spec/blob/main/cesql/spec.md)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CloudEvents Go SDK
-
-The official Go SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Go applications. It supports all CloudEvents protocol bindings and content modes, and includes client implementations for HTTP, Kafka, and other transports.
-
-- **Human URL:** [https://github.com/cloudevents/sdk-go](https://github.com/cloudevents/sdk-go)
-
-#### Tags
-
-- Client Library
-- Go
-- SDK
-
-#### Properties
-
-- [Documentation](https://cloudevents.github.io/sdk-go/)
-- [GitHub Repository](https://github.com/cloudevents/sdk-go)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CloudEvents JavaScript SDK
-
-The official JavaScript SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Node.js and browser environments. It supports structured and binary content modes over HTTP and other transports.
-
-- **Human URL:** [https://github.com/cloudevents/sdk-javascript](https://github.com/cloudevents/sdk-javascript)
-
-#### Tags
-
-- Client Library
-- JavaScript
-- SDK
-
-#### Properties
-
-- [Documentation](https://github.com/cloudevents/sdk-javascript/blob/main/README.md)
-- [GitHub Repository](https://github.com/cloudevents/sdk-javascript)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CloudEvents Java SDK
-
-The official Java SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Java applications. It includes support for HTTP, Kafka, and other transports, and integrates with popular Java frameworks.
-
-- **Human URL:** [https://github.com/cloudevents/sdk-java](https://github.com/cloudevents/sdk-java)
-
-#### Tags
-
-- Client Library
-- Java
-- SDK
-
-#### Properties
-
-- [Documentation](https://github.com/cloudevents/sdk-java/blob/main/README.md)
-- [GitHub Repository](https://github.com/cloudevents/sdk-java)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CloudEvents Python SDK
-
-The official Python SDK for CloudEvents provides libraries for producing and consuming CloudEvents in Python applications. It supports HTTP transport bindings and both structured and binary content modes.
-
-- **Human URL:** [https://github.com/cloudevents/sdk-python](https://github.com/cloudevents/sdk-python)
-
-#### Tags
-
-- Client Library
-- Python
-- SDK
-
-#### Properties
-
-- [Documentation](https://github.com/cloudevents/sdk-python/blob/main/README.md)
-- [GitHub Repository](https://github.com/cloudevents/sdk-python)
-- [Postman Collection](collections/cloudevents-subscriptions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudevents-subscriptions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://cloudevents.io)
 - [Documentation](https://github.com/cloudevents/spec)
-- [Getting Started](https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md)
-- [Blog](https://cloudevents.io/blog/)
-- [GitHub Organization](https://github.com/cloudevents)
-- [S D Ks](https://github.com/cloudevents/spec/blob/main/cloudevents/SDK.md)
+- [Getting started](https://github.com/cloudevents/spec/blob/main/cloudevents/primer.md)
 - [Changelog](https://github.com/cloudevents/spec/releases)
-- [JSON Schema](json-schema/cloudevents-event-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [OpenAPI](openapi/cloudevents-subscriptions-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [AsyncAPI](asyncapi/cloudevents-http-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [JSON-LD](json-ld/cloudevents-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/cloudevents-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
+- [Blog](https://cloudevents.io/blog/)
+- [GitHub](https://github.com/cloudevents)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 65.4 |
+| Contract governance | 13.6 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 5.3 |
+
+**Agent readiness 16.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cloudevents/](https://apis.io/providers/cloudevents/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CloudEvents: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cloudevents/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
